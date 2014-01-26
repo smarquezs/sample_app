@@ -2,14 +2,32 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+gem 'thin'
+
+gem 'simple_form'
+
+# Bootstrap
+gem 'bootstrap-sass', '2.3.2.0'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
+  gem 'guard-rspec'
+  gem 'fuubar'
 end
 
+group :development do
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-rails'
+  gem 'faker'
+end
+
+gem 'will_paginate'
+gem 'will_paginate-bootstrap', '0.2.5'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -40,7 +58,7 @@ group :production do
 end
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
