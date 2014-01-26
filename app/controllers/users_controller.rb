@@ -5,8 +5,9 @@ class UsersController < ApplicationController
 
   # Probabdo branch prueba
   # Segundo comentario para probar branch prueba
-
   # Tercer comentario para probar los branches
+  # Cuarta prueba de branches
+
   def create
   	@user = User.new(params[:user])
   	if @user.save
