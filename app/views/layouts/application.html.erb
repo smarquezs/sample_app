@@ -12,13 +12,14 @@
 	
 <%= render 'layouts/header' %>
 <div class="container">
+	<!-- Inicio flashe message -->
 	<% flash.each do |key, value| %>
-		<div class="alert alert-<%= key == :notice ? 'success' : 'error' %>">
-	  	<button type="button" class="close" data-dismiss="alert">&times;</button>
-	  		<%= value %>
-		</div>
+		<%= content_tag(:div, value, class: "alert alert-#{key == :notice ? 'success' : 'error'}") %>
 	<% end -%>
-	<%= yield %>
+
+	<!-- End flash message -->
+
+	<%= yield %> 
 
   <%= render 'layouts/footer' %>
 

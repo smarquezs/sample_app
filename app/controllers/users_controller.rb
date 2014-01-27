@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
+  # dfffg
   def show
     @user = User.find(params[:id])
     
