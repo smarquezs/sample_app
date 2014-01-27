@@ -6,6 +6,8 @@ gem 'thin'
 
 gem 'simple_form'
 
+gem 'haml'
+
 # Bootstrap
 gem 'bootstrap-sass', '2.3.2.0'
 
@@ -46,6 +48,7 @@ gem 'jquery-rails', '3.0.4'
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 group :doc do

@@ -3,11 +3,10 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
-  # Probabdo branch prueba
-  # Segundo comentario para probar branch prueba
-  # Tercer comentario para probar los branches
-  # Cuarta prueba de branches
-
+  def show
+    @user = User.find(params[:id])
+    
+  end
   def create
   	@user = User.new(params[:user])
   	if @user.save

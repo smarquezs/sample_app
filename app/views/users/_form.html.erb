@@ -1,22 +1,7 @@
-<%= form_for @user  do |f| -%>
-	<% if @user.errors.any? %>
-		<div class="alert alert-error">
-			<h2>Corregir antes de grabar</h2>
-			<ul>
-				<% @user.errors.full_messages.each do |msg| %>
-						<li><%=msg   %></li>
-				<% end -%>
-			</ul>
-		</div>
-	<% end -%>
-	<div class="form-group">
-	  <%= f.label :name, "Name" %>
-	  <%= f.text_field :name, autofocus: true, placeholder: 'Ingrese el nombre' %>
-	</div>
-
-	<div class="form-group">
-	  <%= f.label :email, "Email" %>
-	  <%= f.text_field :email, placeholder: 'Ingrese el email' %>
-	</div>
-  <%= f.submit "Grabar", :class => 'botton-group btn btn-primary' %>
+<%= simple_form_for @user do |f| %>
+	<%= f.input :name %>
+	<%= f.input :email %>
+	<%= f.input :password %>
+	<%= f.input :password_confirmation, label: 'Confirmation' %>
+	<%= f.button :submit, value: 'Create my account', class: 'btn btn-primary btn-large' %>
 <% end -%>
