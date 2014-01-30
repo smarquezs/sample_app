@@ -3,8 +3,6 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
-  # dfffg
-  # dfsgggdhfh
   def show
     @user = User.find(params[:id])
     
@@ -12,9 +10,11 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.save
-  		redirect_to @user, notice: 'Datos grabados correctamente'
+      # Se logea automáticamente el usuario al rgistrarse, luego es dirigido al perfil del usuario
+      sign_in @user
+      redirect_to @user, notice: 'Welcome to the Sample App!'
   	else
-  		render :new
+  		render 'new'
   	end
   end
   

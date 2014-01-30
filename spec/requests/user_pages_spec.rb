@@ -15,7 +15,7 @@ describe "User Pages" do
 	  let(:user) { FactoryGirl.create(:user) }
 		before { visit user_path(user) }
 	  it { should have_content(user.name) }
-	  it { should have_title(user.name) }
+	  it { should have_title(full_title(user.name)) }
 	end
 
 	describe "sign uo page" do
@@ -38,6 +38,15 @@ describe "User Pages" do
 
 		  it "shoul a create user" do
 		  	expect { click_button submit }.to change(User, :count).by(1)
+		  end
+
+		  describe "after saviving the user" do
+		  	before { click_button submit }
+		  	let(:user) { User.find_by_email('smarquezs@gmail.com')  }
+		    
+		    it { should have_link('Sign out') }
+		    it { should have_title(user.name) }
+		    it { should have_selector('div.alert.alert-success', text: 'Welcome') }
 		  end
 		end
 	  
