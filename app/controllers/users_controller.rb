@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class UsersController < ApplicationController
   def new
   	@user = User.new
@@ -18,4 +19,18 @@ class UsersController < ApplicationController
   	end
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update_attributes(params[:user])
+      redirect_to @user, notice: 'Los datos han sido grabados correctamente'
+    else
+      flash[:error] = 'Error al actualizar la información'
+      render 'edit'
+    end
+  end
 end
