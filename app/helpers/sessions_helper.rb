@@ -11,7 +11,8 @@ module SessionsHelper
 		self.current_user = user
 	end
 
-	# Seter current user
+
+	# Setter current user
 	def current_user=(user)
 		@current_user = user
 	end

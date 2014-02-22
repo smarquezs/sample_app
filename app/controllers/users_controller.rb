@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    # rise 'csbdbbnvbnvn'
     @user = User.find(params[:id])
 
     if @user.update_attributes(params[:user])

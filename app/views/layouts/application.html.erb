@@ -12,7 +12,7 @@
 	
 <%= render 'layouts/header' %>
 <div class="container">
-	<!-- Inicio flashe message -->
+	<!-- Inicio flash message -->
 	<% flash.each do |key, value| %>
 		<%= content_tag(:div, value, class: "alert alert-#{key == :notice ? 'success' : 'error'}") %>
 	<% end -%>

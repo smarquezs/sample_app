@@ -36,11 +36,11 @@ describe "User Pages" do
 		  	fill_in 'Confirmation', with: 'foobar'
 		  end
 
-		  it "shoul a create user" do
+		  it "should a create user" do
 		  	expect { click_button submit }.to change(User, :count).by(1)
 		  end
 
-		  describe "after saviving the user" do
+		  describe "after saving the user" do
 		  	before { click_button submit }
 		  	let(:user) { User.find_by_email('smarquezs@gmail.com')  }
 		    
