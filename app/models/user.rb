@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :remember_token
+  attr_accessible :email, :name, :password, :password_confirmation, :remember_token, :avatar, :avatar_cache
   has_secure_password
+
+  mount_uploader :avatar, AvatarUploader
 
   # Validaciones
   validates :name, :email, presence: true

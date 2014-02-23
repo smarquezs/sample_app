@@ -65,6 +65,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # This gem provides a simple and extremely flexible way to upload files from Ruby applications
 gem 'carrierwave'
+gem 'mini_magick'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
