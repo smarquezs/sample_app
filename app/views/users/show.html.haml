@@ -1,7 +1,6 @@
-- provide(:title, @user.name)
+- provide :title, @user.name
 .row
 	%aside.span4
-		%section 
-			%h1 
-				= image_tag(@user.avatar.thumb)
-				= @user.name
+		%h2 
+			= image_tag @user.avatar.thumb.url
+			= @user.name
