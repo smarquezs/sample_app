@@ -13,4 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+<<<<<<< HEAD
 /public/uploads
+=======
+/pulic/uploads/*
+>>>>>>> 38bdff02b02902c58749e0eefabda1083264c8c2
