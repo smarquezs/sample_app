@@ -1,1 +1,1 @@
-== Rails aplication
+== Rails aplication prueba
